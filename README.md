@@ -203,4 +203,4 @@ At present, we officially aim to support the last two versions of the following 
 
 ---
 
-[Soft UI Dashboard - Django Template](https://www.creative-tim.com/product/soft-ui-dashboard-django) - Provided by [Creative Tim](https://www.creative-tim.com/) and [AppSeed](https://appseed.us)
+[Sui-Saver Dashboard](https://github.com/Satyajit-Codys/sui-saver-web) - Created by Satyajit - Diya - Hriya - Souvik
