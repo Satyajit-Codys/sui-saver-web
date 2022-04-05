@@ -8,12 +8,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from tweetml import ml_model
+from apps.tweetml.ml_model import processing_tweets
+from apps.tweetml.ml_model import all_tweets, positives
 
 
 @login_required(login_url="/login/")
 def see_tweets(request):
-
+    processing_tweets()
     msg = None
 
-    return render(request, "tweetml/showtweets.html", {"msg": msg})
+    return render(request, "tweetml/showtweets.html", {"msg": msg, "all_tweets": all_tweets})

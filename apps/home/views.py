@@ -31,8 +31,8 @@ def pages(request):
             return HttpResponseRedirect(reverse('admin:index'))
         context['segment'] = load_template
 
-        html_template = loader.get_template('home/' + load_template)
-        return HttpResponse(html_template.render(context, request))
+        # html_template = loader.get_template('home/' + load_template)
+        # return HttpResponse(html_template.render(context, request))
 
     except template.TemplateDoesNotExist:
 
