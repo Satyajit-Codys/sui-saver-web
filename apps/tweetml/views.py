@@ -17,4 +17,4 @@ def see_tweets(request):
     processing_tweets()
     msg = None
 
-    return render(request, "tweetml/showtweets.html", {"msg": msg, "all_tweets": all_tweets})
+    return render(request, "tweetml/showtweets.html", {"msg": msg, "all_tweets": all_tweets, "positives": positives, "segment": "tweets"})

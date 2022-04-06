@@ -69,20 +69,21 @@ def processing_tweets():
     #       %(label[clf.predict(X)[0]],np.max(clf.predict_proba(X))*100))
 
     for tweet in get_tweets():
+        tweet_link = tweet[len(tweet)-24:len(tweet)]
         label = {0: 'negative', 1: 'positive'}
         X = vect.transform([tweet])
         prediction, prob = label[clf.predict(X)[0]], np.max(
             clf.predict_proba(X))*100
         if prediction == "positive":
             positives.append([tweet, label[clf.predict(X)[0]],
-                              np.max(clf.predict_proba(X))*100])
+                              np.max(clf.predict_proba(X))*100, tweet_link])
         else:
             all_tweets.append([tweet, label[clf.predict(X)[0]],
-                               np.max(clf.predict_proba(X))*100])
+                               np.max(clf.predict_proba(X))*100, tweet_link])
 
-    if len(positives) == 0:
-        print("There are no suicidal tweets")
-    else:
-        print(positives)
+    # if len(positives) == 0:
+    #     print("There are no suicidal tweets")
+    # else:
+    #     print(positives)
         # for i in range(len(positives)):
         #     print('Tweet: %%s \nPrediction: %s\nProbability: %.2f%%' %(positives[i][0],positives[i][1]), positives[i][2])
