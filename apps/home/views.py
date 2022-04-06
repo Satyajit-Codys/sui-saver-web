@@ -2,23 +2,26 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
-
+from django.shortcuts import render, redirect
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+from apps.tweetml.ml_model import positive_tweet_trend, negative_tweet_trend
 
 
 @login_required(login_url="/login/")
 def index(request):
-    context = {'segment': 'index'}
+    context = {"segment": "index", "positive_tweet_trend": positive_tweet_trend,
+               "negative_tweet_trend": negative_tweet_trend}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
+    # return render(request, "", context,  positive_tweet_trend, negative_tweet_trend)
 
 
-@login_required(login_url="/login/")
+@ login_required(login_url="/login/")
 def pages(request):
     context = {}
     # All resource paths end in .html.

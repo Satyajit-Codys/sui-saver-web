@@ -14,6 +14,7 @@ import nltk
 nltk.download('stopwords')
 
 all_tweets, positives = [], []
+positive_tweet_trend, negative_tweet_trend = [], []
 
 
 def processing_tweets():
@@ -75,11 +76,11 @@ def processing_tweets():
         prediction, prob = label[clf.predict(X)[0]], np.max(
             clf.predict_proba(X))*100
         if prediction == "positive":
-            positives.append([tweet, label[clf.predict(X)[0]],
-                              np.max(clf.predict_proba(X))*100, tweet_link])
+            positives.append([tweet, prediction, prob, tweet_link])
+            positive_tweet_trend.append(prob)
         else:
-            all_tweets.append([tweet, label[clf.predict(X)[0]],
-                               np.max(clf.predict_proba(X))*100, tweet_link])
+            all_tweets.append([tweet, prediction, prob, tweet_link])
+            negative_tweet_trend.append(prob)
 
     # if len(positives) == 0:
     #     print("There are no suicidal tweets")
