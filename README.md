@@ -17,8 +17,8 @@
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/creativetimofficial/soft-ui-dashboard-django.git
-$ cd soft-ui-dashboard-django
+$ git clone https://github.com/Satyajit-Codys/sui-saver-web.git
+$ cd sui-saver-web
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -70,12 +70,20 @@ The project is coded using a simple and intuitive structure presented bellow:
    |    |
    |    |-- home/                          # A simple app that serve HTML files
    |    |    |-- views.py                  # Serve HTML pages for authenticated users
-   |    |    |-- urls.py                   # Define some super simple routes
+   |    |    |-- urls.py
+   |    |-- tweetml/                      # app responisible to handle tweet analysis related stuff
+   |    |    |-- views.py                 # Serve HTML pages for authenticated users
+   |    |    |-- urls.py                  # Define routes
+   |    |    |-- ml_model.py              # machine learning models
+   |    |    |-- fetch_tweets.py          # fetch tweets using API
    |    |
    |    |-- authentication/                # Handles auth routes (login and register)
    |    |    |-- urls.py                   # Define authentication routes
    |    |    |-- views.py                  # Handles login and registration
-   |    |    |-- forms.py                  # Define auth forms (login and register)
+   |    |    |-- forms.py
+   |    |-- Questionnaire/                # Handles questionnaire
+   |    |    |-- urls.py                   # Define  routes
+   |    |    |-- views.py                  # serve questionnaire
    |    |
    |    |-- static/
    |    |    |-- <css, JS, images>         # CSS files, Javascripts files
@@ -119,53 +127,6 @@ The project is coded using a simple and intuitive structure presented bellow:
 
 <br />
 
-## Recompile CSS
-
-To recompile SCSS files, follow this setup:
-
-<br />
-
-**Step #1** - Install tools
-
-- [NodeJS](https://nodejs.org/en/) 12.x or higher
-- [Gulp](https://gulpjs.com/) - globally
-  - `npm install -g gulp-cli`
-- [Yarn](https://yarnpkg.com/) (optional)
-
-<br />
-
-**Step #2** - Change the working directory to `assets` folder
-
-```bash
-$ cd apps/static/assets
-```
-
-<br />
-
-**Step #3** - Install modules (this will create a classic `node_modules` directory)
-
-```bash
-$ npm install
-// OR
-$ yarn
-```
-
-<br />
-
-**Step #4** - Edit & Recompile SCSS files
-
-```bash
-$ gulp scss
-```
-
-The generated file is saved in `static/assets/css` directory.
-
-<br />
-
-## Deployment
-
-The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
-
 ### [Docker](https://www.docker.com/) execution
 
 ---
@@ -175,8 +136,8 @@ The application can be easily executed in a docker container. The steps:
 > Get the code
 
 ```bash
-$ git clone https://github.com/creativetimofficial/soft-ui-dashboard-django.git
-$ cd soft-ui-dashboard-django
+$ git clone https://github.com/Satyajit-Codys/sui-saver-web.git
+$ cd sui-saver-web
 ```
 
 > Start the app in Docker
