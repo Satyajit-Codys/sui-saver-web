@@ -16,7 +16,6 @@ nltk.download('stopwords')
 all_tweets, positives = [], []
 positive_tweet_trend, negative_tweet_trend = [], []
 overall_trend = []
-overall_trend_percentage = 0
 
 
 def processing_tweets():
@@ -86,7 +85,7 @@ def processing_tweets():
             negative_tweet_trend.append(prob)
             overall_trend.append(100-prob)
 
-    overall_trend_percentage = sum(overall_trend) / len(all_tweets)
+
 # if len(positives) == 0:
 #     print("There are no suicidal tweets")
 # else:
