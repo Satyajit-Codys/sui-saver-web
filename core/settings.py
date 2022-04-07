@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.tweetml',
     'apps.home',  # Enable the inner home (home)
+    'apps.questionnaire',
 
 ]
 

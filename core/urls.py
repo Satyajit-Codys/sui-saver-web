@@ -11,5 +11,6 @@ urlpatterns = [
     # Auth routes - login / register
     path("", include("apps.authentication.urls")),
     path("", include("apps.home.urls")),             # UI Kits Html files
-    path("", include("apps.tweetml.urls"))
+    path("", include("apps.tweetml.urls")),
+    path("", include("apps.questionnaire.urls"))
 ]

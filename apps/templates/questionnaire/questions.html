@@ -1,0 +1,733 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Questionnaire - Suicidal Detection</h1>
+    <p id="description" class="description text-center">
+      Thank you for taking the time to participate in this survey.
+    </p>
+  </header>
+  <form id="questionnaire-form" action="/" method="post">
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required />
+    </div>
+    <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
+    </div>
+    <div class="form-group">
+      <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+      <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" />
+    </div>
+    <div class="form-group">
+      <p>Which of the following describes YOU?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select current role</option>
+        <option value="student">Veteran or family member of the individual</option>
+        <option value="job">Caregiver of someone living with emotional or physical illness</option>
+        <option value="learner">Mentor/Teacher of the individual</option>
+        <option value="preferNo">Dear friend of the individual</option>
+        <option value="preferNo">Close relative of the individual</option>
+        <option value="other">Other</option>
+      </select>
+
+
+    </div>
+    <div class="form-group">
+      <p>How long have YOU been in touch with the individual?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select timing</option>
+        <option value="student">More than 5 years</option>
+        <option value="job">Between 3 to 5 years</option>
+        <option value="learner">Between 1 to 2 years</option>
+        <option value="preferNo">Between 6 to 12 months </option>
+        <option value="preferNo">Less than 6 months</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>What is your nationality?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select nationality</option>
+        <option value="student">Indian</option>
+        <option value="job">American</option>
+        <option value="learner">African</option>
+        <option value="preferNo">German</option>
+        <option value="preferNo">Chinese</option>
+        <option value="other">Russian</option>
+        <option value="other">Canadian</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>What is the highest education status of the individual?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select education</option>
+        <option value="student">School</option>
+        <option value="job">Some college</option>
+        <option value="learner">Graduate</option>
+        <option value="preferNo">Working</option>
+        <option value="preferNo">Self-employed</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>What is the household income of the individual?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Select income</option>
+        <option value="student">Less than 2 LPA</option>
+        <option value="job">Between 2 LPA to 8 LPA</option>
+        <option value="learner">Between 8 LPA to 20 LPA</option>
+        <option value="preferNo">Above 20 LPA</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>Would you recommend our product to a friend?</p>
+      <label>
+        <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked />Definitely</label>
+      <label>
+        <input name="user-recommend" value="maybe" type="radio" class="input-radio" />Maybe</label>
+
+      <label><input name="user-recommend" value="not-sure" type="radio" class="input-radio" />Not sure</label>
+    </div>
+
+    <div class="form-group">
+      <p>
+        How would you describe your relationship with the individual?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Shares all his daily
+        happenings with me</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Doesn’t share a lot but
+        involves me in important decisions</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Doesn’t inform me
+        about their daily happenings</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Only usual routine
+        exchanges</label>
+
+    </div>
+
+    <div class="form-group">
+      <p>
+        Does the individual have close friends or family they can go to, if they have a serious problem?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes, they have both
+        family and friends at their support</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, they are more close to
+        their family than friends</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Yes, they are more
+        close to their friends than family</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />No, they are mostly all by
+        themselves</label>
+    </div>
+    <div class="form-group">
+      <p>
+        What is the individual most likely to do when faced with a problem?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Talk to a family
+        member or a dear friend about it</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Pretend the problem never
+        existed</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Keep it to themselves
+        and not talk to anyone about it</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Becomes increasingly tense
+        and vulnerable</label>
+    </div>
+    <div class="form-group">
+      <p>
+        What do you know about the individual’s mood disturbances?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They continued for at
+        least 6 months</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They continued for less
+        than 6 months</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />There were
+        occassional spells of mood swings and they were very frequents</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />There were very few mood
+        changes or none at all
+      </label>
+    </div>
+
+    <div class="form-group">
+      <p>
+        Does the individual suffer from recurrent temper outbursts manifested verbally or behaviorally?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes, they are mostly
+        verbal rages</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, they are mostly
+        behavioral (i.e. physical aggression towrads people or property)</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Yes, they are
+        occassionally verbal or behavioral in proportion to the intensity or duration of the situation or
+        provocation</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />No, he/she does not exhibit
+        such outbursts
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Is the irritable or angry mood of the individual noticable by people close to him?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes, the mood between
+        the temper outbursts is persistently irritable or angry most of the day, and is observable by others (at home,
+        school, with peers)</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, but the temper
+        outbursts were mostly confined to their home</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />No, they do not show
+        their anger towards others</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />No, hardly exhibit such
+        behaviours
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the normal life of the individual been affected in a significant way?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They have difficulty
+        succeeding at school/university/work or are unable to participate in activities typically enjoyed by healthy
+        individuals of the same age</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Their family life has been
+        severely disrupted by their outbursts and irritability</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They have trouble
+        initiating or sustaining friendships</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />There has been no significant
+        change in their normal life
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        What is the sleep schedule of the individual like at the moment?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They sleep no longer
+        than 7-8 hours a night and don’t nap during the day</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They sleep no longer than
+        10 hours in a 24-hour period including naps</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They sleep no longer
+        than 12 hours in a 24-hour period including naps</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They sleep longer than 12
+        hours in a 24-hour period including naps
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Whether it’s eating too much or skipping a dicey-looking bain-marie, we’ve all overeaten or missed a meal now
+        and again. How has the individual’s appetite been?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />There is no change in
+        their usual appetite</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They occasionally eat more
+        or less than usual</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They eat much more or
+        much less than usual</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They rarely eat within a
+        24-hour period or feel the need to overeat at every meal
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Though everyone is faced with hard-to-make decisions now and again that can take our attention away from the
+        present moment, being able to focus and be decisive when we need to is important. How is the individual’s
+        ability to concentrate and make decisions?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />There is no change in
+        their ability to concentrate or make decisions</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They occasionally feel
+        indecisive or find their attention wandering</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They struggle to
+        focus their attention or make decisions most of the time</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They cannot concentrate well
+        enough to read and/or they can't even make minor decisions
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Whether you call it self-confidence, bravado or swagger, a healthy self-image is an important trait for every
+        individual to possess. How does the individual view themselves?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Sees themselves as
+        equally worthwhile and deserving as other people</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They are more self-blaming
+        than usual</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They largely believe
+        that they cause problems for others</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They thinks almost constantly
+        about major and minor defects in themselves
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        It’s important to spend time regularly doing the things you enjoy, whether that’s playing or watching sport,
+        listening to music, walking the dog, or getting together with your mates to watch the footy. When doing their
+        favourite hobbies and activities, does the individual enjoy them as much as they used to?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They enjoy them as
+        much as they usually do</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They enjoy them, but not as
+        much as they used to</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They don’t enjoy them
+        at all now</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They never had hobbies as
+        such
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Whether you're a social butterfly or more of a caterpillar, spending time with family, friends and co-workers is
+        important for every bloke. Does the individual enjoy the company of others as much as usual?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They enjoy
+        socialising as much as they usually do</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />I notice that they are less
+        interested in socialising with other people</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />I find that they have
+        interest in being around only a select few people</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They have virtually no
+        interest in being around people
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Life is full of annoyances – like ATM queues, traffic jams or telemarketers. On occasion, these annoyances can
+        turn into anger. How easily is the individual angered?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not easily, they are
+        able to control their temper</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Some things make them
+        angry, but their temper is generally under control</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />They don’t always
+        show their anger</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />They fly off the handle
+        easily
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        It’d be pretty hard to find a person who hasn’t flown off the handle now and again. But some blokes have a
+        tendency to say things they later regret when they get angry. When angry, does the individual ever say things
+        they regret?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />No, they don't say
+        things they later regret when angry</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />On occasion, they say
+        things they regret when angry, but they usually apologise immediately after</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Yes, they often blurt
+        out things they later regret</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Yes, in fact, they get so
+        angry they rarely remember what they’ve said
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Some of us punch stuff when angry. And while it may make them feel better for a moment, the wall or face on the
+        receiving end usually does not. How often does the individual get violent when angry?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />They rarely become
+        angry, let alone violent</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />They get angry every once
+        in a while, but they don't usually get violent</label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />On occasion, they
+        have been known to punch a wall or break something when angry</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Often they get so angry that
+        they become physically violent toward others
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Life is unpredictable. And because of this, it can be easy to worry about the future. How often does the
+        individual worry?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />On occasion, maybe once or
+        twice a week
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Quite often, they are
+        bothered by worrying more than 3 or 4 days per week</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />All the time, they cannot
+        stop or control their worrying
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Whether it's a lifestyle change, for your health or it's the last chance with your partner, lots of people have
+        tried to quit drinking. Has the individual ever tried to give up drugs or alcohol?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />No, their alcohol and
+        drug use is non-existent or very minimal</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, they were able to curb
+        their drinking and/or drug use for period of time
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Yes they have tried,
+        but they were unable to stop drinking or using drugs</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />No, not only do they not want
+        to stop,they don't think they would be able to
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Have you noticed any change in behavior or attitude of the individual?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />No, they are almost
+        the same as they were before</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, there has been a
+        positive change in their behavior
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />Yes, they have become
+        quieter than before</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Yes, they have completed
+        isolated themselves now
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Does the individual find little interest or pleasure in doing things?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Is the individual feeling down, depressed, or hopeless in recent times?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Is the individual feeling bad about themselves - or that they are a failure or have let themselves or their
+        family down?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Is the individual having thoughts that they would be better off alone, or of thoughts of hurting themselves?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Does the individual wish they were dead or wish they could go to sleep and not wake up?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        In the recent weeks, has the individual felt so worried or nervous that they felt it was “unbearable” or they
+        couldn’t “take it anymore”?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Does the individual feel that life is so bad and they don't want to live anymore?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Not at all</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Several days
+      </label>
+      <label><input name="prefer" value="data-visualization" type="radio" class="input-checkbox" />More than half of the
+        days</label>
+      <label><input name="prefer" value="challenges" type="radio" class="input-checkbox" />Nearly every day
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Is the individual showing specific depressive symptoms as these?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox" />Weight
+        loss</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Insomnia or fatigue
+      </label>
+      <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox" />Sadness</label>
+      <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Loss of interest in all
+        activities
+      </label>
+      <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Appetite changes
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual ever been diagnosed with a mental health condition by a professional (doctor/therapist)?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual ever been diagnosed with a mental health condition by a professional (doctor/therapist)?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual ever received treatment for a mental health problem?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Was there any change encountered in the individual as a result of the medication?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual ever been subjected to any form of addiction?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox" />Alcohol</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Drugs
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Tobacco and nicotine
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Gambling / Video games /
+        Social media addiction
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Did the individual ever try to commit suicide?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox" />Yes, and there
+        were some mental disturbances prior to the incident</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Yes, but there weren’t
+        any specific mental disturbances prior to the incident
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />No, but there have been
+        cases where they have attempted self-harm
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />No, they have never
+        attempted to commit self-harm
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Did the individual ever try to commit suicide?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes, and there were
+        some mental disturbances prior to the incident</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, but there weren’t any
+        specific mental disturbances prior to the incident
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No, but there have been
+        cases where they have attempted self-harm
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No, they have never
+        attempted to commit self-harm
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual ever done any of the following?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox" />Collected
+        pills</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Obtained a gun
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Given away valuables
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Written a will or
+        suicide note
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Held a gun but changed
+        their mind
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Cut themselves
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox" />Tried to hang themselves
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        Has the individual witnessed a tragic incident in the past that impacted their life a lot?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Yes, within 6
+        months</label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, within a year
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Yes, within 3 years
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />No, there weren’t any in
+        the recent past
+      </label>
+    </div>
+    <div class="form-group">
+      <p>
+        If yes, what was the tragic incident?
+      </p>
+
+      <label><input name="prefer" value="front-end-projects" type="radio" class="input-checkbox" />Death of a close
+        person
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Illness of a family member
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />End of a long term
+        relationship
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Dysfunctional family
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Sudden unemployment
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Sexual harrasment at
+        school/university/work
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Bullying
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Financial problems
+      </label>
+      <label>
+        <input name="prefer" value="back-end-projects" type="radio" class="input-checkbox" />Any other cause
+      </label>
+    </div>
+    <div class="form-group">
+      <p>Any comments or suggestions for us?</p>
+      <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+{% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
