@@ -16,7 +16,7 @@ nltk.download('stopwords')
 all_tweets, positives = [], []
 positive_tweet_trend, negative_tweet_trend = [], []
 overall_trend = []
-
+recent_prob_list = []
 
 def processing_tweets():
     def preprocess_tweet(text):
@@ -69,7 +69,7 @@ def processing_tweets():
     # X = vect.transform(example)
     # print('Prediction: %s\nProbability: %.2f%%'
     #       %(label[clf.predict(X)[0]],np.max(clf.predict_proba(X))*100))
-
+    count = 0
     for tweet in get_tweets():
         tweet_link = tweet[len(tweet)-24:len(tweet)]
         label = {0: 'negative', 1: 'positive'}
@@ -80,10 +80,16 @@ def processing_tweets():
             positives.append([tweet, prediction, prob, tweet_link])
             positive_tweet_trend.append(prob)
             overall_trend.append(prob)
+            if(count<10):
+                recent_prob_list.append(prob)
+                count+=1
         else:
             all_tweets.append([tweet, prediction, prob, tweet_link])
             negative_tweet_trend.append(prob)
             overall_trend.append(100-prob)
+            if(count<10):
+                recent_prob_list.append(100-prob)
+                count+=1
 
 
 # if len(positives) == 0:
