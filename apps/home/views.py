@@ -13,8 +13,9 @@ from apps.tweetml.ml_model import positive_tweet_trend, negative_tweet_trend, ov
 
 @login_required(login_url="/login/")
 def index(request):
+    total_tweets = len(positive_tweet_trend) + len(negative_tweet_trend)
     context = {"segment": "index", "positive_tweet_trend": positive_tweet_trend,
-               "negative_tweet_trend": negative_tweet_trend, "overall_trend_percentage": overall_trend_percentage}
+               "negative_tweet_trend": negative_tweet_trend, "overall_trend_percentage": overall_trend_percentage, "total_tweets": total_tweets}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))

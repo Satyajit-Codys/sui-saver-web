@@ -25,7 +25,7 @@ def get_twitter_client():
 def get_tweets():
     tweets = []
     user = "satyabot1"
-    n = 30
+    n = 100
     client = get_twitter_client()
     for status in tweepy.Cursor(client.user_timeline, screen_name=user).items(n):
         # print(status.text)
