@@ -8,13 +8,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from apps.tweetml.ml_model import positive_tweet_trend, negative_tweet_trend
+from apps.tweetml.ml_model import positive_tweet_trend, negative_tweet_trend, overall_trend_percentage
 
 
 @login_required(login_url="/login/")
 def index(request):
     context = {"segment": "index", "positive_tweet_trend": positive_tweet_trend,
-               "negative_tweet_trend": negative_tweet_trend}
+               "negative_tweet_trend": negative_tweet_trend, "overall_trend_percentage": overall_trend_percentage}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
