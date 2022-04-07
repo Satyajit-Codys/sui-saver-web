@@ -16,4 +16,4 @@ def see_questions(request):
     if request.method == "POST":
         print(request.form.to_dict())
 
-    return render(request, "questionnaire/questions.html", {"msg": msg, "segment": "questionnaire"})
+    return render(request, "questionnaire/questions.html", {"msg": msg, "segment": "questions"})
