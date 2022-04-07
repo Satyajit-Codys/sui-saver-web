@@ -13,7 +13,8 @@
       Thank you for taking the time to participate in this survey.
     </p>
   </header>
-  <form id="questionnaire-form" action="/" method="post">
+  <form id="questionnaire-form" method="post">
+    {% csrf_token %}
     <div class="form-group">
       <label id="name-label" for="name">Name</label>
       <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required />
