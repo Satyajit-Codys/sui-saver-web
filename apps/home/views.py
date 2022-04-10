@@ -21,10 +21,10 @@ def index(request):
     try:
         recent_prob = sum(recent_prob_list)//10
     except:
-        overall_trend_percentage = "No data"
+        recent_prob = "No data"
     context = {"segment": "index", "positive_tweet_trend": positive_tweet_trend,
-               "negative_tweet_trend": negative_tweet_trend, "overall_trend_percentage": overall_trend_percentage, 
-               "recent_prob":recent_prob , "total_tweets": total_tweets}
+               "negative_tweet_trend": negative_tweet_trend, "overall_trend_percentage": overall_trend_percentage,
+               "recent_prob": recent_prob, "total_tweets": total_tweets}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
