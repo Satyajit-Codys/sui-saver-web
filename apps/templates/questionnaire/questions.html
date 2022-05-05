@@ -1,3 +1,4 @@
+ 
 {% extends 'layouts/base.html' %}
 
 {% block title %} Dashboard {% endblock title %}
@@ -53,7 +54,7 @@
       <!--non-weighted question-->
       <select id="dropdown" name="role" class="form-control" required>
         <option disabled selected value>Select timing</option>
-        <option value="more">More than 5 years</option>
+        <option value="most">More than 5 years</option>
         <option value="medium">Between 3 to 5 years</option>
         <option value="moderate">Between 1 to 2 years</option>
         <option value="less">Between 6 to 12 months </option>
@@ -77,41 +78,35 @@
     </div>
     <div class="form-group">
       <p>What is the highest education status of the individual?</p>
+      <!--non-weighted question-->
       <select id="dropdown" name="role" class="form-control" required>
         <option disabled selected value>Select education</option>
         <option value="student">School</option>
-        <option value="job">Some college</option>
-        <option value="learner">Graduate</option>
-        <option value="preferNo">Working</option>
-        <option value="preferNo">Self-employed</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <p>What is the household income of the individual?</p>
-      <select id="dropdown" name="role" class="form-control" required>
-        <option disabled selected value>Select income</option>
-        <option value="student">Less than 2 LPA</option>
-        <option value="job">Between 2 LPA to 8 LPA</option>
-        <option value="learner">Between 8 LPA to 20 LPA</option>
-        <option value="preferNo">Above 20 LPA</option>
+        <option value="college">Some college</option>
+        <option value="grad">Graduate</option>
+        <option value="working">Working</option>
+        <option value="self">Self-employed</option>
       </select>
     </div>
 
     <div class="form-group">
-      <p>Would you recommend our product to a friend?</p>
-      <label>
-        <input name="user-recommend1" value="definitely" type="radio" class="input-radio" checked />Definitely</label>
-      <label>
-        <input name="user-recommend2" value="maybe" type="radio" class="input-radio" />Maybe</label>
-
-      <label><input name="user-recommend3" value="not-sure" type="radio" class="input-radio" />Not sure</label>
+        <p>
+            What is the household income of the individual?
+        </p>
+        <!--weighted question-->
+        <label><input name="inc1" value="3" type="radio" class="input-radio" />Less than 2 LPA</label>
+        <label>
+          <input name="inc2" value="2" type="radio" class="input-radio" />Between 2 LPA to 8 LPA</label>
+        <label><input name="inc3" value="1" type="radio" class="input-radio" />Between 2 LPA to 8 LPA</label>
+        <label><input name="inc4" value="0" type="radio" class="input-radio" />Above 20 LPA1
+        </label>
     </div>
 
     <div class="form-group">
       <p>
         How would you describe your relationship with the individual?
       </p>
-
+      <!--from here, all are weighted questions with values ranging from 3 to 0 indicating extreme suicidability, moderate suicidability, less chances of being suicidal, optimistic-->
       <label><input name="relationship1" value="0" type="radio" class="input-radio" />Shares all his daily
         happenings with me</label>
       <label>
@@ -704,6 +699,17 @@
         <input name="incident9" value="3" type="radio" class="input-checkbox" />Any other cause
       </label>
     </div>
+
+    <div class="form-group">
+        <p>Would you recommend our product to a friend?</p>
+        <label>
+          <input name="user-recommend1" value="definitely" type="radio" class="input-radio" checked />Definitely</label>
+        <label>
+          <input name="user-recommend2" value="maybe" type="radio" class="input-radio" />Maybe</label>
+  
+        <label><input name="user-recommend3" value="not-sure" type="radio" class="input-radio" />Not sure</label>
+      </div>
+
     <div class="form-group">
       <p>Any comments or suggestions for us?</p>
       <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
@@ -721,3 +727,4 @@
 </div>
 
 {% endblock content %}
+
