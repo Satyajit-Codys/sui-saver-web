@@ -35,13 +35,14 @@
     </div>
     <div class="form-group">
       <p>Which of the following describes you?</p>
+      <!--non-weighted question-->
       <select id="dropdown" name="role" class="form-control" required>
         <option disabled selected value>Select current role</option>
-        <option value="student">Veteran or family member of the individual</option>
-        <option value="job">Caregiver of someone living with emotional or physical illness</option>
+        <option value="family">Veteran or family member of the individual</option>
+        <option value="caregiver">Caregiver of someone living with emotional or physical illness</option>
         <option value="learner">Mentor/Teacher of the individual</option>
-        <option value="preferNo">Dear friend of the individual</option>
-        <option value="preferNo">Close relative of the individual</option>
+        <option value="friend">Dear friend of the individual</option>
+        <option value="relative">Close relative of the individual</option>
         <option value="other">Other</option>
       </select>
 
@@ -49,26 +50,28 @@
     </div>
     <div class="form-group">
       <p>How long have YOU been in touch with the individual?</p>
+      <!--non-weighted question-->
       <select id="dropdown" name="role" class="form-control" required>
         <option disabled selected value>Select timing</option>
-        <option value="student">More than 5 years</option>
-        <option value="job">Between 3 to 5 years</option>
-        <option value="learner">Between 1 to 2 years</option>
-        <option value="preferNo">Between 6 to 12 months </option>
-        <option value="preferNo">Less than 6 months</option>
+        <option value="more">More than 5 years</option>
+        <option value="medium">Between 3 to 5 years</option>
+        <option value="moderate">Between 1 to 2 years</option>
+        <option value="less">Between 6 to 12 months </option>
+        <option value="least">Less than 6 months</option>
       </select>
     </div>
     <div class="form-group">
       <p>What is your nationality?</p>
+      <!--non-weighted question-->
       <select id="dropdown" name="role" class="form-control" required>
         <option disabled selected value>Select nationality</option>
-        <option value="student">Indian</option>
-        <option value="job">American</option>
-        <option value="learner">African</option>
-        <option value="preferNo">German</option>
-        <option value="preferNo">Chinese</option>
-        <option value="other">Russian</option>
-        <option value="other">Canadian</option>
+        <option value="i">Indian</option>
+        <option value="a">American</option>
+        <option value="af">African</option>
+        <option value="g">German</option>
+        <option value="c">Chinese</option>
+        <option value="r">Russian</option>
+        <option value="ca">Canadian</option>
         <option value="other">Other</option>
       </select>
     </div>
@@ -97,11 +100,11 @@
     <div class="form-group">
       <p>Would you recommend our product to a friend?</p>
       <label>
-        <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked />Definitely</label>
+        <input name="user-recommend1" value="definitely" type="radio" class="input-radio" checked />Definitely</label>
       <label>
-        <input name="user-recommend" value="maybe" type="radio" class="input-radio" />Maybe</label>
+        <input name="user-recommend2" value="maybe" type="radio" class="input-radio" />Maybe</label>
 
-      <label><input name="user-recommend" value="not-sure" type="radio" class="input-radio" />Not sure</label>
+      <label><input name="user-recommend3" value="not-sure" type="radio" class="input-radio" />Not sure</label>
     </div>
 
     <div class="form-group">
@@ -109,14 +112,14 @@
         How would you describe your relationship with the individual?
       </p>
 
-      <label><input name="relationship" value="0" type="radio" class="input-radio" />Shares all his daily
+      <label><input name="relationship1" value="0" type="radio" class="input-radio" />Shares all his daily
         happenings with me</label>
       <label>
-        <input name="relationship" value="1" type="radio" class="input-radio" />Doesn’t share a lot but
+        <input name="relationship2" value="1" type="radio" class="input-radio" />Doesn’t share a lot but
         involves me in important decisions</label>
-      <label><input name="relationship" value="2" type="radio" class="input-radio" />Doesn’t inform me
+      <label><input name="relationship3" value="2" type="radio" class="input-radio" />Doesn’t inform me
         about their daily happenings</label>
-      <label><input name="relationship" value="3" type="radio" class="input-radio" />Only usual routine
+      <label><input name="relationship4" value="3" type="radio" class="input-radio" />Only usual routine
         exchanges</label>
 
     </div>
@@ -126,14 +129,14 @@
         Does the individual have close friends or family they can go to, if they have a serious problem?
       </p>
 
-      <label><input name="family-friends" value="0" type="radio" class="input-checkbox" />Yes, they have both
+      <label><input name="family-friends1" value="0" type="radio" class="input-checkbox" />Yes, they have both
         family and friends at their support</label>
       <label>
-        <input name="family-friends" value="1" type="radio" class="input-checkbox" />Yes, they are more close to
+        <input name="family-friends2" value="1" type="radio" class="input-checkbox" />Yes, they are more close to
         their family than friends</label>
-      <label><input name="family-friends" value="2" type="radio" class="input-checkbox" />Yes, they are more
+      <label><input name="family-friends3" value="2" type="radio" class="input-checkbox" />Yes, they are more
         close to their friends than family</label>
-      <label><input name="family-friends" value="3" type="radio" class="input-checkbox" />No, they are mostly all by
+      <label><input name="family-friends4" value="3" type="radio" class="input-checkbox" />No, they are mostly all by
         themselves</label>
     </div>
 
@@ -142,14 +145,14 @@
         What is the individual most likely to do when faced with a problem?
       </p>
 
-      <label><input name="problem" value="0" type="radio" class="input-checkbox" />Talk to a family
+      <label><input name="problem1" value="0" type="radio" class="input-checkbox" />Talk to a family
         member or a dear friend about it</label>
       <label>
-        <input name="problem" value="1" type="radio" class="input-checkbox" />Pretend the problem never
+        <input name="problem2" value="1" type="radio" class="input-checkbox" />Pretend the problem never
         existed</label>
-      <label><input name="problem" value="2" type="radio" class="input-checkbox" />Keep it to themselves
+      <label><input name="problem3" value="2" type="radio" class="input-checkbox" />Keep it to themselves
         and not talk to anyone about it</label>
-      <label><input name="problem" value="3" type="radio" class="input-checkbox" />Becomes increasingly tense
+      <label><input name="problem4" value="3" type="radio" class="input-checkbox" />Becomes increasingly tense
         and vulnerable</label>
     </div>
     <div class="form-group">
@@ -157,14 +160,14 @@
         What do you know about the individual’s mood disturbances?
       </p>
 
-      <label><input name="mood" value="3" type="radio" class="input-checkbox" />They continued for at
+      <label><input name="mood1" value="3" type="radio" class="input-checkbox" />They continued for at
         least 6 months</label>
       <label>
-        <input name="mood" value="2" type="radio" class="input-checkbox" />They continued for less
+        <input name="mood2" value="2" type="radio" class="input-checkbox" />They continued for less
         than 6 months</label>
-      <label><input name="mood" value="1" type="radio" class="input-checkbox" />There were
+      <label><input name="mood3" value="1" type="radio" class="input-checkbox" />There were
         occassional spells of mood swings and they were very frequents</label>
-      <label><input name="mood" value="0" type="radio" class="input-checkbox" />There were very few mood
+      <label><input name="mood4" value="0" type="radio" class="input-checkbox" />There were very few mood
         changes or none at all
       </label>
     </div>
@@ -174,15 +177,15 @@
         Does the individual suffer from recurrent temper outbursts manifested verbally or behaviorally?
       </p>
 
-      <label><input name="temper" value="0" type="radio" class="input-checkbox" />Yes, they are mostly
+      <label><input name="temper1" value="0" type="radio" class="input-checkbox" />Yes, they are mostly
         verbal rages</label>
       <label>
-        <input name="temper" value="1" type="radio" class="input-checkbox" />Yes, they are mostly
+        <input name="temper2" value="1" type="radio" class="input-checkbox" />Yes, they are mostly
         behavioral (i.e. physical aggression towrads people or property)</label>
-      <label><input name="temper" value="2" type="radio" class="input-checkbox" />Yes, they are
+      <label><input name="temper3" value="2" type="radio" class="input-checkbox" />Yes, they are
         occassionally verbal or behavioral in proportion to the intensity or duration of the situation or
         provocation</label>
-      <label><input name="temper" value="3" type="radio" class="input-checkbox" />No, he/she does not exhibit
+      <label><input name="temper4" value="3" type="radio" class="input-checkbox" />No, he/she does not exhibit
         such outbursts
       </label>
     </div>
@@ -191,15 +194,15 @@
         Is the irritable or angry mood of the individual noticable by people close to him?
       </p>
 
-      <label><input name="irritable" value="3" type="radio" class="input-checkbox" />Yes, the mood between
+      <label><input name="irritable1" value="3" type="radio" class="input-checkbox" />Yes, the mood between
         the temper outbursts is persistently irritable or angry most of the day, and is observable by others (at home,
         school, with peers)</label>
       <label>
-        <input name="irritable" value="2" type="radio" class="input-checkbox" />Yes, but the temper
+        <input name="irritable2" value="2" type="radio" class="input-checkbox" />Yes, but the temper
         outbursts were mostly confined to their home</label>
-      <label><input name="irritable" value="1" type="radio" class="input-checkbox" />No, they do not show
+      <label><input name="irritable3" value="1" type="radio" class="input-checkbox" />No, they do not show
         their anger towards others</label>
-      <label><input name="irritable" value="0" type="radio" class="input-checkbox" />No, hardly exhibit such
+      <label><input name="irritable4" value="0" type="radio" class="input-checkbox" />No, hardly exhibit such
         behaviours
       </label>
     </div>
@@ -208,15 +211,15 @@
         Has the normal life of the individual been affected in a significant way?
       </p>
 
-      <label><input name="school" value="3" type="radio" class="input-checkbox" />They have difficulty
+      <label><input name="school1" value="3" type="radio" class="input-checkbox" />They have difficulty
         succeeding at school/university/work or are unable to participate in activities typically enjoyed by healthy
         individuals of the same age</label>
       <label>
-        <input name="school" value="2" type="radio" class="input-checkbox" />Their family life has been
+        <input name="school2" value="2" type="radio" class="input-checkbox" />Their family life has been
         severely disrupted by their outbursts and irritability</label>
-      <label><input name="school" value="1" type="radio" class="input-checkbox" />They have trouble
+      <label><input name="school3" value="1" type="radio" class="input-checkbox" />They have trouble
         initiating or sustaining friendships</label>
-      <label><input name="school" value="0" type="radio" class="input-checkbox" />There has been no significant
+      <label><input name="school4" value="0" type="radio" class="input-checkbox" />There has been no significant
         change in their normal life
       </label>
     </div>
@@ -225,14 +228,14 @@
         What is the sleep schedule of the individual like at the moment?
       </p>
 
-      <label><input name="sleep" value="0" type="radio" class="input-checkbox" />They sleep no longer
+      <label><input name="sleep1" value="0" type="radio" class="input-checkbox" />They sleep no longer
         than 7-8 hours a night and don’t nap during the day</label>
       <label>
-        <input name="sleep" value="1" type="radio" class="input-checkbox" />They sleep no longer than
+        <input name="sleep2" value="1" type="radio" class="input-checkbox" />They sleep no longer than
         10 hours in a 24-hour period including naps</label>
-      <label><input name="sleep" value="2" type="radio" class="input-checkbox" />They sleep no longer
+      <label><input name="sleep3" value="2" type="radio" class="input-checkbox" />They sleep no longer
         than 12 hours in a 24-hour period including naps</label>
-      <label><input name="sleep" value="3" type="radio" class="input-checkbox" />They sleep longer than 12
+      <label><input name="sleep4" value="3" type="radio" class="input-checkbox" />They sleep longer than 12
         hours in a 24-hour period including naps
       </label>
     </div>
@@ -242,14 +245,14 @@
         and again. How has the individual’s appetite been?
       </p>
 
-      <label><input name="meal" value="0" type="radio" class="input-checkbox" />There is no change in
+      <label><input name="meal1" value="0" type="radio" class="input-checkbox" />There is no change in
         their usual appetite</label>
       <label>
-        <input name="meal" value="1" type="radio" class="input-checkbox" />They occasionally eat more
+        <input name="meal2" value="1" type="radio" class="input-checkbox" />They occasionally eat more
         or less than usual</label>
-      <label><input name="meal" value="2" type="radio" class="input-checkbox" />They eat much more or
+      <label><input name="meal3" value="2" type="radio" class="input-checkbox" />They eat much more or
         much less than usual</label>
-      <label><input name="meal" value="3" type="radio" class="input-checkbox" />They rarely eat within a
+      <label><input name="meal4" value="3" type="radio" class="input-checkbox" />They rarely eat within a
         24-hour period or feel the need to overeat at every meal
       </label>
     </div>
@@ -260,14 +263,14 @@
         ability to concentrate and make decisions?
       </p>
 
-      <label><input name="decision" value="0" type="radio" class="input-checkbox" />There is no change in
+      <label><input name="decision1" value="0" type="radio" class="input-checkbox" />There is no change in
         their ability to concentrate or make decisions</label>
       <label>
-        <input name="decision" value="1" type="radio" class="input-checkbox" />They occasionally feel
+        <input name="decision2" value="1" type="radio" class="input-checkbox" />They occasionally feel
         indecisive or find their attention wandering</label>
-      <label><input name="decision" value="2" type="radio" class="input-checkbox" />They struggle to
+      <label><input name="decision3" value="2" type="radio" class="input-checkbox" />They struggle to
         focus their attention or make decisions most of the time</label>
-      <label><input name="decision" value="3" type="radio" class="input-checkbox" />They cannot concentrate well
+      <label><input name="decision4" value="3" type="radio" class="input-checkbox" />They cannot concentrate well
         enough to read and/or they can't even make minor decisions
       </label>
     </div>
@@ -277,14 +280,14 @@
         individual to possess. How does the individual view themselves?
       </p>
 
-      <label><input name="selfimage" value="0" type="radio" class="input-checkbox" />Sees themselves as
+      <label><input name="selfimage1" value="0" type="radio" class="input-checkbox" />Sees themselves as
         equally worthwhile and deserving as other people</label>
       <label>
-        <input name="selfimage" value="1" type="radio" class="input-checkbox" />They are more self-blaming
+        <input name="selfimage2" value="1" type="radio" class="input-checkbox" />They are more self-blaming
         than usual</label>
-      <label><input name="selfimage" value="2" type="radio" class="input-checkbox" />They largely believe
+      <label><input name="selfimage3" value="2" type="radio" class="input-checkbox" />They largely believe
         that they cause problems for others</label>
-      <label><input name="selfimage" value="3" type="radio" class="input-checkbox" />They thinks almost constantly
+      <label><input name="selfimage4" value="3" type="radio" class="input-checkbox" />They thinks almost constantly
         about major and minor defects in themselves
       </label>
     </div>
@@ -295,14 +298,14 @@
         favourite hobbies and activities, does the individual enjoy them as much as they used to?
       </p>
 
-      <label><input name="hobby" value="0" type="radio" class="input-checkbox" />They enjoy them as
+      <label><input name="hobby1" value="0" type="radio" class="input-checkbox" />They enjoy them as
         much as they usually do</label>
       <label>
-        <input name="hobby" value="1" type="radio" class="input-checkbox" />They enjoy them, but not as
+        <input name="hobby2" value="1" type="radio" class="input-checkbox" />They enjoy them, but not as
         much as they used to</label>
-      <label><input name="hobby" value="2" type="radio" class="input-checkbox" />They don’t enjoy them
+      <label><input name="hobby3" value="2" type="radio" class="input-checkbox" />They don’t enjoy them
         at all now</label>
-      <label><input name="hobby" value="3" type="radio" class="input-checkbox" />They never had hobbies as
+      <label><input name="hobby4" value="3" type="radio" class="input-checkbox" />They never had hobbies as
         such
       </label>
     </div>
@@ -312,14 +315,14 @@
         important for every bloke. Does the individual enjoy the company of others as much as usual?
       </p>
 
-      <label><input name="company" value="0" type="radio" class="input-checkbox" />They enjoy
+      <label><input name="company1" value="0" type="radio" class="input-checkbox" />They enjoy
         socialising as much as they usually do</label>
       <label>
-        <input name="company" value="1" type="radio" class="input-checkbox" />I notice that they are less
+        <input name="company2" value="1" type="radio" class="input-checkbox" />I notice that they are less
         interested in socialising with other people</label>
-      <label><input name="company" value="2" type="radio" class="input-checkbox" />I find that they have
+      <label><input name="company3" value="2" type="radio" class="input-checkbox" />I find that they have
         interest in being around only a select few people</label>
-      <label><input name="company" value="3" type="radio" class="input-checkbox" />They have virtually no
+      <label><input name="company4" value="3" type="radio" class="input-checkbox" />They have virtually no
         interest in being around people
       </label>
     </div>
@@ -329,14 +332,14 @@
         turn into anger. How easily is the individual angered?
       </p>
 
-      <label><input name="anger" value="0" type="radio" class="input-checkbox" />Not easily, they are
+      <label><input name="anger1" value="0" type="radio" class="input-checkbox" />Not easily, they are
         able to control their temper</label>
       <label>
-        <input name="anger" value="1" type="radio" class="input-checkbox" />Some things make them
+        <input name="anger2" value="1" type="radio" class="input-checkbox" />Some things make them
         angry, but their temper is generally under control</label>
-      <label><input name="anger" value="2" type="radio" class="input-checkbox" />They don’t always
+      <label><input name="anger3" value="2" type="radio" class="input-checkbox" />They don’t always
         show their anger</label>
-      <label><input name="anger" value="3" type="radio" class="input-checkbox" />They fly off the handle
+      <label><input name="anger4" value="3" type="radio" class="input-checkbox" />They fly off the handle
         easily
       </label>
     </div>
@@ -347,14 +350,14 @@
         they regret?
       </p>
 
-      <label><input name="say" value="0" type="radio" class="input-checkbox" />No, they don't say
+      <label><input name="say1" value="0" type="radio" class="input-checkbox" />No, they don't say
         things they later regret when angry</label>
       <label>
-        <input name="say" value="1" type="radio" class="input-checkbox" />On occasion, they say
+        <input name="say2" value="1" type="radio" class="input-checkbox" />On occasion, they say
         things they regret when angry, but they usually apologise immediately after</label>
-      <label><input name="say" value="2" type="radio" class="input-checkbox" />Yes, they often blurt
+      <label><input name="say3" value="2" type="radio" class="input-checkbox" />Yes, they often blurt
         out things they later regret</label>
-      <label><input name="say" value="3" type="radio" class="input-checkbox" />Yes, in fact, they get so
+      <label><input name="say4" value="3" type="radio" class="input-checkbox" />Yes, in fact, they get so
         angry they rarely remember what they’ve said
       </label>
     </div>
@@ -364,14 +367,14 @@
         receiving end usually does not. How often does the individual get violent when angry?
       </p>
 
-      <label><input name="punch" value="0" type="radio" class="input-checkbox" />They rarely become
+      <label><input name="punch1" value="0" type="radio" class="input-checkbox" />They rarely become
         angry, let alone violent</label>
       <label>
-        <input name="punch" value="1" type="radio" class="input-checkbox" />They get angry every once
+        <input name="punch2" value="1" type="radio" class="input-checkbox" />They get angry every once
         in a while, but they don't usually get violent</label>
-      <label><input name="punch" value="2" type="radio" class="input-checkbox" />On occasion, they
+      <label><input name="punch3" value="2" type="radio" class="input-checkbox" />On occasion, they
         have been known to punch a wall or break something when angry</label>
-      <label><input name="punch" value="3" type="radio" class="input-checkbox" />Often they get so angry that
+      <label><input name="punch4" value="3" type="radio" class="input-checkbox" />Often they get so angry that
         they become physically violent toward others
       </label>
     </div>
@@ -381,14 +384,14 @@
         individual worry?
       </p>
 
-      <label><input name="worry" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="worry1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="worry" value="1" type="radio" class="input-checkbox" />On occasion, maybe once or
+        <input name="worry2" value="1" type="radio" class="input-checkbox" />On occasion, maybe once or
         twice a week
       </label>
-      <label><input name="worry" value="2" type="radio" class="input-checkbox" />Quite often, they are
+      <label><input name="worry3" value="2" type="radio" class="input-checkbox" />Quite often, they are
         bothered by worrying more than 3 or 4 days per week</label>
-      <label><input name="worry" value="3" type="radio" class="input-checkbox" />All the time, they cannot
+      <label><input name="worry4" value="3" type="radio" class="input-checkbox" />All the time, they cannot
         stop or control their worrying
       </label>
     </div>
@@ -398,15 +401,15 @@
         tried to quit drinking. Has the individual ever tried to give up drugs or alcohol?
       </p>
 
-      <label><input name="drinking" value="0" type="radio" class="input-checkbox" />No, their alcohol and
+      <label><input name="drinking1" value="0" type="radio" class="input-checkbox" />No, their alcohol and
         drug use is non-existent or very minimal</label>
       <label>
-        <input name="drinking" value="1" type="radio" class="input-checkbox" />Yes, they were able to curb
+        <input name="drinking2" value="1" type="radio" class="input-checkbox" />Yes, they were able to curb
         their drinking and/or drug use for period of time
       </label>
-      <label><input name="drinking" value="2" type="radio" class="input-checkbox" />Yes they have tried,
+      <label><input name="drinking3" value="2" type="radio" class="input-checkbox" />Yes they have tried,
         but they were unable to stop drinking or using drugs</label>
-      <label><input name="drinking" value="3" type="radio" class="input-checkbox" />No, not only do they not want
+      <label><input name="drinking4" value="3" type="radio" class="input-checkbox" />No, not only do they not want
         to stop,they don't think they would be able to
       </label>
     </div>
@@ -415,15 +418,15 @@
         Have you noticed any change in behavior or attitude of the individual?
       </p>
 
-      <label><input name="change" value="0" type="radio" class="input-checkbox" />No, they are almost
+      <label><input name="change1" value="0" type="radio" class="input-checkbox" />No, they are almost
         the same as they were before</label>
       <label>
-        <input name="change" value="1" type="radio" class="input-checkbox" />Yes, there has been a
+        <input name="change2" value="1" type="radio" class="input-checkbox" />Yes, there has been a
         positive change in their behavior
       </label>
-      <label><input name="change" value="2" type="radio" class="input-checkbox" />Yes, they have become
+      <label><input name="change3" value="2" type="radio" class="input-checkbox" />Yes, they have become
         quieter than before</label>
-      <label><input name="change" value="3" type="radio" class="input-checkbox" />Yes, they have completed
+      <label><input name="change4" value="3" type="radio" class="input-checkbox" />Yes, they have completed
         isolated themselves now
       </label>
     </div>
@@ -432,13 +435,13 @@
         Does the individual find little interest or pleasure in doing things?
       </p>
 
-      <label><input name="interest" value="3" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="interest1" value="3" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="interest" value="2" type="radio" class="input-checkbox" />Several days
+        <input name="interest2" value="2" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="interest" value="1" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="interest3" value="1" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="interest" value="0" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="interest4" value="0" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -446,13 +449,13 @@
         Is the individual feeling down, depressed, or hopeless in recent times?
       </p>
 
-      <label><input name="depressed" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="depressed1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="depressed" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="depressed2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="depressed" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="depressed3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="depressed" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="depressed4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -461,13 +464,13 @@
         family down?
       </p>
 
-      <label><input name="bad" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="bad1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="bad" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="bad2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="bad" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="bad3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="bad" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="bad4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -475,13 +478,13 @@
         Is the individual having thoughts that they would be better off alone, or of thoughts of hurting themselves?
       </p>
 
-      <label><input name="hurting" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="hurting1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="hurting" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="hurting2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="hurting" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="hurting3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="hurting" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="hurting4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -489,13 +492,13 @@
         Does the individual wish they were dead or wish they could go to sleep and not wake up?
       </p>
 
-      <label><input name="wish" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="wish1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="wish" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="wish2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="wish" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="wish3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="wish" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="wish4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -504,13 +507,13 @@
         couldn’t “take it anymore”?
       </p>
 
-      <label><input name="unbearable" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="unbearable1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="unbearable" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="unbearable2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="unbearable" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="unbearable3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="unbearable" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="unbearable4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
@@ -518,29 +521,29 @@
         Does the individual feel that life is so bad and they don't want to live anymore?
       </p>
 
-      <label><input name="notlive" value="0" type="radio" class="input-checkbox" />Not at all</label>
+      <label><input name="notlive1" value="0" type="radio" class="input-checkbox" />Not at all</label>
       <label>
-        <input name="notlive" value="1" type="radio" class="input-checkbox" />Several days
+        <input name="notlive2" value="1" type="radio" class="input-checkbox" />Several days
       </label>
-      <label><input name="notlive" value="2" type="radio" class="input-checkbox" />More than half of the
+      <label><input name="notlive3" value="2" type="radio" class="input-checkbox" />More than half of the
         days</label>
-      <label><input name="notlive" value="3" type="radio" class="input-checkbox" />Nearly every day
+      <label><input name="notlive4" value="3" type="radio" class="input-checkbox" />Nearly every day
       </label>
     </div>
     <div class="form-group">
       <p>
         Is the individual showing specific depressive symptoms as these?
       </p>
-      <label><input name="symptoms" value="2" type="checkbox" class="input-checkbox" />Weight
+      <label><input name="symptoms1" value="2" type="checkbox" class="input-checkbox" />Weight
         loss</label>
       <label>
-        <input name="symptoms" value="2" type="checkbox" class="input-checkbox" />Insomnia or fatigue
+        <input name="symptoms2" value="2" type="checkbox" class="input-checkbox" />Insomnia or fatigue
       </label>
-      <label><input name="symptoms" value="2" type="checkbox" class="input-checkbox" />Sadness</label>
-      <label><input name="symptoms" value="2" type="checkbox" class="input-checkbox" />Loss of interest in all
+      <label><input name="symptoms3" value="2" type="checkbox" class="input-checkbox" />Sadness</label>
+      <label><input name="symptoms4" value="2" type="checkbox" class="input-checkbox" />Loss of interest in all
         activities
       </label>
-      <label><input name="symptoms" value="2" type="checkbox" class="input-checkbox" />Appetite changes
+      <label><input name="symptoms5" value="2" type="checkbox" class="input-checkbox" />Appetite changes
       </label>
     </div>
     <div class="form-group">
@@ -548,9 +551,9 @@
         Has the individual ever been diagnosed with a mental health condition by a professional (doctor/therapist)?
       </p>
 
-      <label><input name="prefer" value="2" type="radio" class="input-checkbox" />Yes</label>
+      <label><input name="yes" value="2" type="radio" class="input-checkbox" />Yes</label>
       <label>
-        <input name="prefer" value="0" type="radio" class="input-checkbox" />No
+        <input name="no" value="0" type="radio" class="input-checkbox" />No
       </label>
     </div>
     <div class="form-group">
@@ -558,9 +561,9 @@
         Has the individual ever been diagnosed with a mental health condition by a professional (doctor/therapist)?
       </p>
 
-      <label><input name="diagnose" value="2" type="radio" class="input-checkbox" />Yes</label>
+      <label><input name="diagnose1" value="2" type="radio" class="input-checkbox" />Yes</label>
       <label>
-        <input name="diagnose" value="0" type="radio" class="input-checkbox" />No
+        <input name="diagnose2" value="0" type="radio" class="input-checkbox" />No
       </label>
     </div>
     <div class="form-group">
@@ -568,9 +571,9 @@
         Has the individual ever received treatment for a mental health problem?
       </p>
 
-      <label><input name="treatment" value="2" type="radio" class="input-checkbox" />Yes</label>
+      <label><input name="treatment1" value="2" type="radio" class="input-checkbox" />Yes</label>
       <label>
-        <input name="treatment" value="0" type="radio" class="input-checkbox" />No
+        <input name="treatment2" value="0" type="radio" class="input-checkbox" />No
       </label>
     </div>
     <div class="form-group">
@@ -578,9 +581,9 @@
         Was there any change encountered in the individual as a result of the medication?
       </p>
 
-      <label><input name="medchange" value="3" type="radio" class="input-checkbox" />Yes</label>
+      <label><input name="medchange1" value="3" type="radio" class="input-checkbox" />Yes</label>
       <label>
-        <input name="medchange" value="0" type="radio" class="input-checkbox" />No
+        <input name="medchange2" value="0" type="radio" class="input-checkbox" />No
       </label>
     </div>
     <div class="form-group">
@@ -588,15 +591,15 @@
         Has the individual ever been subjected to any form of addiction?
       </p>
 
-      <label><input name="addiction" value="3" type="checkbox" class="input-checkbox" />Alcohol</label>
+      <label><input name="addiction1" value="3" type="checkbox" class="input-checkbox" />Alcohol</label>
       <label>
-        <input name="addiction" value="3" type="checkbox" class="input-checkbox" />Drugs
+        <input name="addiction2" value="3" type="checkbox" class="input-checkbox" />Drugs
       </label>
       <label>
-        <input name="addiction" value="3" type="checkbox" class="input-checkbox" />Tobacco and nicotine
+        <input name="addiction3" value="3" type="checkbox" class="input-checkbox" />Tobacco and nicotine
       </label>
       <label>
-        <input name="addiction" value="3" type="checkbox" class="input-checkbox" />Gambling / Video games /
+        <input name="addiction4" value="3" type="checkbox" class="input-checkbox" />Gambling / Video games /
         Social media addiction
       </label>
     </div>
@@ -605,18 +608,18 @@
         Did the individual ever try to commit suicide?
       </p>
 
-      <label><input name="suicide" value="3" type="radio" class="input-checkbox" />Yes, and there were
+      <label><input name="suicide1" value="3" type="radio" class="input-checkbox" />Yes, and there were
         some mental disturbances prior to the incident</label>
       <label>
-        <input name="suicide" value="2" type="radio" class="input-checkbox" />Yes, but there weren’t any
+        <input name="suicide2" value="2" type="radio" class="input-checkbox" />Yes, but there weren’t any
         specific mental disturbances prior to the incident
       </label>
       <label>
-        <input name="suicide" value="1" type="radio" class="input-checkbox" />No, but there have been
+        <input name="suicide3" value="1" type="radio" class="input-checkbox" />No, but there have been
         cases where they have attempted self-harm
       </label>
       <label>
-        <input name="suicide" value="0" type="radio" class="input-checkbox" />No, they have never
+        <input name="suicide4" value="0" type="radio" class="input-checkbox" />No, they have never
         attempted to commit self-harm
       </label>
     </div>
@@ -625,27 +628,27 @@
         Has the individual ever done any of the following?
       </p>
 
-      <label><input name="done" value="3" type="checkbox" class="input-checkbox" />Collected
+      <label><input name="done1" value="3" type="checkbox" class="input-checkbox" />Collected
         pills</label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Obtained a gun
+        <input name="done2" value="3" type="checkbox" class="input-checkbox" />Obtained a gun
       </label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Given away valuables
+        <input name="done3" value="3" type="checkbox" class="input-checkbox" />Given away valuables
       </label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Written a will or
+        <input name="done4" value="3" type="checkbox" class="input-checkbox" />Written a will or
         suicide note
       </label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Held a gun but changed
+        <input name="done5" value="3" type="checkbox" class="input-checkbox" />Held a gun but changed
         their mind
       </label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Cut themselves
+        <input name="done6" value="3" type="checkbox" class="input-checkbox" />Cut themselves
       </label>
       <label>
-        <input name="done" value="3" type="checkbox" class="input-checkbox" />Tried to hang themselves
+        <input name="done7" value="3" type="checkbox" class="input-checkbox" />Tried to hang themselves
       </label>
     </div>
     <div class="form-group">
@@ -671,34 +674,34 @@
         If yes, what was the tragic incident?
       </p>
 
-      <label><input name="incident" value="3" type="radio" class="input-checkbox" />Death of a close
+      <label><input name="incident1" value="3" type="radio" class="input-checkbox" />Death of a close
         person
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Illness of a family member
+        <input name="incident2" value="3" type="radio" class="input-checkbox" />Illness of a family member
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />End of a long term
+        <input name="incident3" value="3" type="radio" class="input-checkbox" />End of a long term
         relationship
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Dysfunctional family
+        <input name="incident4" value="3" type="radio" class="input-checkbox" />Dysfunctional family
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Sudden unemployment
+        <input name="incident5" value="3" type="radio" class="input-checkbox" />Sudden unemployment
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Sexual harrasment at
+        <input name="incident6" value="3" type="radio" class="input-checkbox" />Sexual harrasment at
         school/university/work
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Bullying
+        <input name="incident7" value="3" type="radio" class="input-checkbox" />Bullying
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Financial problems
+        <input name="incident8" value="3" type="radio" class="input-checkbox" />Financial problems
       </label>
       <label>
-        <input name="incident" value="3" type="radio" class="input-checkbox" />Any other cause
+        <input name="incident9" value="3" type="radio" class="input-checkbox" />Any other cause
       </label>
     </div>
     <div class="form-group">
