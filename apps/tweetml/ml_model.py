@@ -77,14 +77,14 @@ def processing_tweets():
         prediction, prob = label[clf.predict(X)[0]], np.max(
             clf.predict_proba(X))*100
         if prediction == "positive":
-            positives.append([tweet, prediction, prob, tweet_link])
+            positives.append([tweet, prediction, "{:.2f}".format(prob), tweet_link])
             positive_tweet_trend.append(prob)
             overall_trend.append(prob)
             if(count<10):
                 recent_prob_list.append(prob)
                 count+=1
         else:
-            all_tweets.append([tweet, prediction, prob, tweet_link])
+            all_tweets.append([tweet, prediction, "{:.2f}".format(prob), tweet_link])
             negative_tweet_trend.append(prob)
             overall_trend.append(100-prob)
             if(count<10):
